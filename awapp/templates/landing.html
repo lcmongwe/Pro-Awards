@@ -7,8 +7,44 @@
 {% block content%}
 
 <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-8"></div>
+    <div class="col-md-4">
+<br>
+        <h2>LogIn and Rate!</h2>
+        <br><br>
+ <form action="" method="POST">
+
+    {% csrf_token %}
+
+    <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Username</label>
+    <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder="Enter username">
+ 
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" name="password" placeholder="Password">
+  </div>
+   <center>
+<input type = "submit" value = "submit" class = "btn btn-outline-danger">
+</center>
+<br>
+<br>
+
+<div class="card">
+  <div class="card-body">
+    Don't have an acccount? <a href="{% url 'register'%}">SignUp</a>
+  </div>
+</div>
+
+</form>
+
+</div>
+
+    <div class="col-md-8">
+    <img src="{% static 'images/landing.jpg' %}" height="500px" width="500px" alt="My image">
+
+    </div>
 
 </div>
 
