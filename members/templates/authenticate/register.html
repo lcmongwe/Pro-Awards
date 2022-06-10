@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {%load static%}
     {% block styles %} 
-    <link rel="stylesheet" href="{% static 'css/register.css' %}">
-   
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">  
      {% endblock %}
 {% block content%}
 
+<div class="register" style="background:rgb(202, 193, 193); padding:20px;width:600px;height:700px;margin-left: 20%;">
+<div class="formr" style="padding:20px;">
 {%if form.errors%}
 
 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -17,19 +18,22 @@ there was an error with the form
 </div>
 {%endif%}
 
-<div class="shadow p-4 mb-5 bg-body rounded">
+<center>
 <h1>Register</h1>
+</center>
 
 <form action="{% url 'register'%}" method="POST">
 
     {% csrf_token %}
 
    {{form.as_p}}
-   <br>
+   
+   <center>
 <input type = "submit" value = "submit" class = "btn btn-secondary">
+</center>
 </form>
 </div>
-
+</div>
 
 
 {%endblock%}

@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 class Post(models.Model):
     image = models.ImageField(upload_to='pics/',blank=True)
     img_name = models.CharField(max_length=200, blank=True)
+    img_url = models.CharField(max_length=200, blank=True,null=True)
     img_description = models.CharField(max_length=200,blank=True)
     date_posted = models.DateTimeField(auto_now_add=True,blank=True)
 
@@ -18,7 +19,7 @@ class Post(models.Model):
         return self.img_name
 
 class Review(models.Model):
-    post = models.ForeignKey(Post,on_delete=models.CASCADE,related_name='comments',null=True,blank=True)
+    post = models.ForeignKey(Post,on_delete=models.CASCADE,related_name='reviews',null=True,blank=True)
     poster = models.ForeignKey(User,on_delete=models.CASCADE,related_name='poster',null=True,blank=True)
     review=models.TextField(null=True,blank=True)
     date_posted= models.DateTimeField(auto_now_add=True,blank=True,null=True)
