@@ -5,8 +5,8 @@
      {% endblock %}
 {% block content%}
 
-<div class="register" style="background:rgb(202, 193, 193); padding:20px;width:600px;height:700px;margin-left: 20%;">
-<div class="formr" style="padding:20px;">
+<div class="register" >
+<div class="formr" >
 {%if form.errors%}
 
 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -20,6 +20,7 @@ there was an error with the form
 
 <center>
 <h1>Register</h1>
+<i class="fa-solid fa-user-tie fa-4x"></i>
 </center>
 
 <form action="{% url 'register'%}" method="POST">
@@ -29,8 +30,10 @@ there was an error with the form
    {{form.as_p}}
    
    <center>
-<input type = "submit" value = "submit" class = "btn btn-secondary">
+<input type = "submit" value = "submit" class = "btn btn-outline-danger"><br>
+Already have an acccount? <a href="{% url 'login'%}">LogIn</a>
 </center>
+
 </form>
 </div>
 </div>
