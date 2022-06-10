@@ -10,3 +10,9 @@ from .forms import *
 def home(request):
     
     return render(request, 'home.html', {})
+
+
+def landing(request):
+    
+    return render(request, 'landing.html', {})
+

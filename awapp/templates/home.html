@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
+{%load static%}
+    {% block styles %} 
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    {% endblock %}
+    
 {% block content%}
 
 <h1>this is home</h1>
 
-
+<h2>you are logged in as {{user.username}}</h2>
 
 
 {%endblock%}
