@@ -5,10 +5,13 @@
     {% endblock %}
     
 {% block content%}
+<p>you are logged in as {{user.username}}</p>
 
-<h1>this is home</h1>
-
-<h2>you are logged in as {{user.username}}</h2>
-
+{%for post in posts%}
+<img src="{{post.image.url}}" alt="" width="400px" height="400px">
+<p>name: {{post.img_name}} <br>
+posted by: {{post.poster.name}}</p>
+<br><br>
+{%endfor%}
 
 {%endblock%}

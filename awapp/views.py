@@ -8,11 +8,15 @@ from .forms import *
 
 
 def home(request):
+    posts=Post.objects.all()
     
-    return render(request, 'home.html', {})
+    return render(request, 'home.html', {'posts': posts})
 
 
-def landing(request):
+def landing(request,pk):
+    user=Profile.objects.get(id=pk)
     
-    return render(request, 'landing.html', {})
+    return render(request, 'landing.html', {'user':user})
 
+def profile(request):
+    return render(request, 'profile.html', {})
