@@ -11,6 +11,8 @@
 <img src="{{post.image.url}}" alt="" width="400px" height="400px">
 <p>name: {{post.img_name}} <br>
 posted by: {{post.poster.name}}</p>
+<a href="{% url 'delete_post' post.id%}">delete</a>
+
 <a href="{% url 'profile' user.id%}">view profile</a>
 <br><br>
 {%endfor%}
