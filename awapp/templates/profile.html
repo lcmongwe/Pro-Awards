@@ -6,14 +6,20 @@
     
 {% block content%}
 
-<p>name: {{user.name}}</p> <br>
-phone: {{user.phone}}</p>
-email: {{user.email}}</p>
-joined: {{user.date_created}}</p>
-bio: {{user.bio}}</p>
+<p>name: {{posterr.name}}<br>
+phone: {{posterr.phone}}</br>
+email: {{posterr.email}}</br>
+joined: {{posterr.date_created}}</br>
+bio: {{posterr.bio}}</p>
 
 <br><br>
-
+<hr>
+<center>
+    <h1>posts</h1>
+    <h3>{{posts_count}}</h3>
+</center>
+<hr>
+<br><br>
 {%for post in posts%}
 {{post.name}} <br>
 <img src="{{post.image.url}}" alt="" width="400px" height="400px"> <br>

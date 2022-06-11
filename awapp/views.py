@@ -10,7 +10,8 @@ from .forms import *
 def home(request):
     posts=Post.objects.all()
     
-    return render(request, 'home.html', {'posts': posts})
+    
+    return render(request, 'home.html', {'posts': posts,'profile': profile})
 
 
 def landing(request):
@@ -20,5 +21,9 @@ def landing(request):
 def profile(request,pk):
     posterr=Profile.objects.get(id=pk)
     posts=posterr.poster.all()
+    posts_count=posts.count()
 
-    return render(request, 'profile.html', {'posts': posts,'posterr': posterr})
+    return render(request, 'profile.html', {'posts': posts,'posterr': posterr,'posts_count': posts_count})
+
+def create_post(request):
+    return render(request, 'post.html', {})
