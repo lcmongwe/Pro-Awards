@@ -2,9 +2,9 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse,Http404,HttpResponseRedirect
 from .models import *
 import datetime as dt
+from django.contrib import messages
 from .forms import *
-# from django.core.mail import send_mail
-# from django.conf import settings
+
 
 
 def home(request):
@@ -26,4 +26,11 @@ def profile(request,pk):
     return render(request, 'profile.html', {'posts': posts,'posterr': posterr,'posts_count': posts_count})
 
 def create_post(request):
+    form=CreatePostForm(request.POST,request.FILES)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+        messages.success(request,(' posted successfully!'))
+        
+        return redirect('home')
     return render(request, 'post.html', {})
