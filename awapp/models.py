@@ -2,8 +2,20 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
+
+class Profile(models.Model):
+    name = models.CharField(max_length=100, blank=True,null=True)
+    phone = models.CharField(max_length=100, blank=True, null=True)
+    email = models.CharField(max_length=100, blank=True, null=True)
+    bio= models.CharField(max_length=500, blank=True, null=True)
+    date_created = models.DateTimeField(auto_now_add=True,blank=True)
+
+    def __str__(self):
+        return self.name
+
 class Post(models.Model):
     image = models.ImageField(upload_to='pics/',blank=True)
+    poster = models.ForeignKey(Profile,on_delete=models.CASCADE,related_name='poster',null=True,blank=True)
     img_name = models.CharField(max_length=200, blank=True)
     img_url = models.CharField(max_length=200, blank=True,null=True)
     img_description = models.CharField(max_length=200,blank=True)
@@ -18,15 +30,7 @@ class Post(models.Model):
     def __str__(self):
         return self.img_name
 
-class Profile(models.Model):
-    name = models.CharField(max_length=100, blank=True,null=True)
-    phone = models.CharField(max_length=100, blank=True, null=True)
-    email = models.CharField(max_length=100, blank=True, null=True)
-    bio= models.CharField(max_length=500, blank=True, null=True)
-    date_created = models.DateTimeField(auto_now_add=True,blank=True)
 
-    def __str__(self):
-        return self.name
 
 
 class Review(models.Model):
