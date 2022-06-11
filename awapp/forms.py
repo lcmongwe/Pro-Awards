@@ -20,7 +20,7 @@ class CreatePostForm(ModelForm):
 
         widgets={
            'img_name': forms.TextInput(attrs={'class': 'form-control','placeholder':'  name '}),
-           
-           'imge_description':forms.TextInput(attrs={'class': 'form-control','placeholder':'description'}),
+           'img_description':forms.TextInput(attrs={'class': 'form-control','placeholder':'description'}),
+           'img_url':forms.TextInput(attrs={'class': 'form-control','placeholder':'enter url'}),
 
         }
