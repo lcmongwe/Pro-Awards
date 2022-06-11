@@ -13,10 +13,12 @@ def home(request):
     return render(request, 'home.html', {'posts': posts})
 
 
-def landing(request,pk):
-    user=Profile.objects.get(id=pk)
+def landing(request):
     
-    return render(request, 'landing.html', {'user':user})
+    return render(request, 'landing.html', {})
 
-def profile(request):
-    return render(request, 'profile.html', {})
+def profile(request,pk):
+    posterr=Profile.objects.get(id=pk)
+    posts=posterr.poster.all()
+
+    return render(request, 'profile.html', {'posts': posts,'posterr': posterr})

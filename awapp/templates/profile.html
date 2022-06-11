@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{%load static%}
+    {% block styles %} 
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    {% endblock %}
+    
+{% block content%}
+
+<p>name: {{user.name}}</p> <br>
+phone: {{user.phone}}</p>
+email: {{user.email}}</p>
+joined: {{user.date_created}}</p>
+bio: {{user.bio}}</p>
+
+<br><br>
+
+{%for post in posts%}
+{{post.name}} <br>
+<img src="{{post.image.url}}" alt="" width="400px" height="400px"> <br>
+{{post.img_name}} <br>
+{{post.img_url}} <br>
+{{post.img_description}} <br>
+{{post.date_posted}} <br>
+
+
+{%endfor%}
+
+{%endblock%}
