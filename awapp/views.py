@@ -4,13 +4,12 @@ from .models import *
 import datetime as dt
 from django.contrib import messages
 from .forms import *
+from django.contrib.auth.decorators import login_required
 
 
-
+@login_required(login_url='login')
 def home(request):
     posts=Post.objects.all()
-    
-    
     return render(request, 'home.html', {'posts': posts,'profile': profile})
 
 
@@ -18,6 +17,7 @@ def landing(request):
     
     return render(request, 'landing.html', {})
 
+@login_required(login_url='login')
 def profile(request,pk):
     posterr=Profile.objects.get(id=pk)
     posts=posterr.poster.all()
@@ -25,6 +25,8 @@ def profile(request,pk):
 
     return render(request, 'profile.html', {'posts': posts,'posterr': posterr,'posts_count': posts_count})
 
+
+@login_required(login_url='login')
 def create_post(request):
     form=CreatePostForm(request.POST,request.FILES)
     if request.method == 'POST':
@@ -35,12 +37,17 @@ def create_post(request):
         return redirect('home')
     return render(request, 'post.html', {'form': form})
 
+
+
+@login_required(login_url='login')
 def update_post( request,pk):
     post=Post.objects.get(id=pk)
     form=CreatePostForm(request.POST,request.FILES,intance=post)
 
     return render(request, 'post.html', {'form': form,'post':post})
 
+
+@login_required(login_url='login')
 def delete_post( request,pk):
     post=Post.objects.get(id=pk)
     if request.method=='POST':
