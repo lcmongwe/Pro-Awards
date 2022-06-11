@@ -10,7 +10,9 @@
 {%for post in posts%}
 <img src="{{post.image.url}}" alt="" width="400px" height="400px">
 <p>name: {{post.img_name}} <br>
-posted by: {{post.poster.name}}</p>
+posted by: {{post.poster.name}} <br>
+visit site: {{post.img_url}}<br>
+Description: {{post.img_description}} <br></p>
 <a href="{% url 'delete_post' post.id%}">delete</a>
 
 <a href="{% url 'profile' user.id%}">view profile</a>

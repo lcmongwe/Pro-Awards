@@ -5,7 +5,9 @@
     {% endblock %}
     
 {% block content%}
-
+{%if posterr.image%}
+<img src="{{posterr.image.url}}" alt="" height="300px" width="300px" style="border-radius:250rem ;">
+{%endif%}
 <p>name: {{posterr.name}}<br>
 phone: {{posterr.phone}}</br>
 email: {{posterr.email}}</br>

@@ -19,11 +19,12 @@ def landing(request):
 
 @login_required(login_url='login')
 def profile(request,pk):
+    user=Profile.objects.get(id=pk)
     posterr=Profile.objects.get(id=pk)
     posts=posterr.poster.all()
     posts_count=posts.count()
 
-    return render(request, 'profile.html', {'posts': posts,'posterr': posterr,'posts_count': posts_count})
+    return render(request, 'profile.html', {'posts': posts,'posterr': posterr,'posts_count': posts_count,'user': user})
 
 
 @login_required(login_url='login')
@@ -54,3 +55,15 @@ def delete_post( request,pk):
         post.delete()
         return redirect('home')
     return render(request, 'delete.html', {'post':post})
+
+
+def create_profile(request,user_id):
+    user=User.objects.get(id=user_id)
+    form=ProfileForm(request.POST,request.FILES )
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+        messages.success(request,(' posted successfully!'))
+        
+        return redirect('home')
+    return render(request, 'update_profile.html',{'user':user,'form':form})

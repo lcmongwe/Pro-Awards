@@ -11,7 +11,7 @@ class CreatePostForm(ModelForm):
     class Meta:
         model= Post
         # fields= "__all__"
-        fields=('image', 'img_name', 'img_url', 'img_description',    )
+        fields=('image', 'img_name', 'img_url', 'img_description', 'poster'   )
 
         labels={
             'img_name':'name',
@@ -21,6 +21,30 @@ class CreatePostForm(ModelForm):
         widgets={
            'img_name': forms.TextInput(attrs={'class': 'form-control','placeholder':'  name '}),
            'img_description':forms.TextInput(attrs={'class': 'form-control','placeholder':'description'}),
-           'img_url':forms.TextInput(attrs={'class': 'form-control','placeholder':'enter url'}),
+           'img_url':forms.URLInput(attrs={'class': 'form-control','placeholder':'enter url'}),
+
+        }
+
+
+class ProfileForm(ModelForm):
+    class Meta:
+        model= Profile
+        # fields= "__all__"
+        fields=('name', 'email', 'phone','bio', 'image'  )
+
+        labels={
+            'name':'name',
+            'email':'email',  
+            'phone':'phone',
+            'bio':'bio', 
+            'image':'image',   
+
+        }
+
+        widgets={
+           'name': forms.TextInput(attrs={'class': 'form-control','placeholder':'  name '}),
+           'phone': forms.TextInput(attrs={'class': 'form-control','placeholder':'  phone '}),          
+           'email':forms.TextInput(attrs={'class': 'form-control','placeholder':'email'}),
+           'bio':forms.Textarea(attrs={'class': 'form-control','placeholder':'bio'}),
 
         }
