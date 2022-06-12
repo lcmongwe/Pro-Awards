@@ -37,11 +37,10 @@ class Post(models.Model):
 
 
 class Review(models.Model):
-    post = models.ForeignKey(Post,on_delete=models.CASCADE,related_name='reviews',null=True,blank=True)
-    poster = models.ForeignKey(User,on_delete=models.CASCADE,related_name='poster',null=True,blank=True)
-    review=models.TextField(null=True,blank=True)
-    date_posted= models.DateTimeField(auto_now_add=True,blank=True,null=True)
-
+    design=models.TextField(null=True,blank=True)
+    usability=models.TextField(null=True,blank=True)
+    content= models.IntegerField(default=0,null=True)
+    
     def save_review(self):
         self.save()
 
