@@ -80,11 +80,19 @@ def review(request,post_id ):
     post=Post.objects.get(id=post_id)
     if request.method == 'POST':
         form=ReviewForm(request.POST )
+        
         if form.is_valid():
             form=form.save(commit=False)
             form.post=post
             form.save()
-            return redirect('home')
+            design = request.POST['design']
+            usability = request.POST['usability']
+            content = request.POST['content']
+            votes=(int(design)+int(usability)+int(content))/3
+    
+            
+
+            # return redirect('home')
     else:
         form=ReviewForm()
 
@@ -122,7 +130,7 @@ def post_list(request):
            return Response(serializer.data,status=status.HTTP_201_CREATED)
 
 @api_view(['GET','PUT','DELETE'])
-def drink_detail(request,id):
+def post_detail(request,id):
 
     try:
        post= Post.objects.get(pk=id)

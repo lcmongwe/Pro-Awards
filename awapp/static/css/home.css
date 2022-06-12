@@ -1,0 +1,23 @@
+.card1{
+    width: 200px;
+    height:309px;
+    background-color: antiquewhite;
+    border: 5px solid grey;
+
+}
+
+.card2{
+    border: 5px solid grey;
+}
+
+.card3{
+    color:red;
+    font-size: 28px;
+    font-weight: bold;
+
+}
+
+hr{
+    color:rgb(91, 89, 86);
+    height:30px;
+}

@@ -17,5 +17,6 @@ urlpatterns =[
 
 
     path('posts/', views.post_list, name="posts"),
+    path('posts/<int:id>', views.post_detail, name="posts"),
 
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

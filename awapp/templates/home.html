@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {%load static%}
     {% block styles %} 
-    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
     {% endblock %}
     
 {% block content%}
@@ -18,7 +18,7 @@
 <div class="col-md-6">
     <div class="row">
   <div class="col-sm-4">
-    <div class="card">
+    <div class="card card1">
       <div class="card-body">
         <h5 class="card-title">PROJECT : {{post.img_name}}</h5>
         <p class="card-text">Owner: <br> {{post.poster.name}}</p>
@@ -27,7 +27,7 @@
     </div>
   </div>
   <div class="col-sm-8">
-    <div class="card">
+    <div class="card card2">
       <div class="card-body">
         <h5 class="card-title">PROJECT INFO: {{post.img_url}}</h5>
         <p class="card-text">Description: {{post.img_description}}</p>
@@ -39,11 +39,11 @@
 <br>
 <div class="row">
     <div class="col-md-8">
-    <div class="card">
+    <div class="card card3">
   <div class="card-body">
     <center>
         <p>CURRENT RATING</p>
-        <P><strong>8/10</strong></P>
+        <P><strong>{{votes}}/10</strong></P>
     </center>
   </div>
   </div>
