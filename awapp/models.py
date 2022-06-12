@@ -37,10 +37,10 @@ class Post(models.Model):
 
 
 class Review(models.Model):
-    design=models.TextField(null=True,blank=True)
-    usability=models.TextField(null=True,blank=True)
+    design=models.IntegerField(default=0,blank=True)
+    usability=models.TextField(default=0,blank=True)
     content= models.IntegerField(default=0,null=True)
-    
+
     def save_review(self):
         self.save()
 
