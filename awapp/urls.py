@@ -15,4 +15,7 @@ urlpatterns =[
     path('review/<post_id>', views.review, name="review"),
     path('search', views.search, name="search"),
 
+
+    path('posts/', views.post_list, name="posts"),
+
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

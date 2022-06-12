@@ -6,6 +6,13 @@ from django.contrib import messages
 from .forms import *
 from django.contrib.auth.decorators import login_required
 
+# api imports
+from django.http import JsonResponse
+from .serializers import Postserializer
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import status
+from awapp import serializers
 
 @login_required(login_url='login')
 def home(request):

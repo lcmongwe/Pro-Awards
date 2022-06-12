@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'awapp',
     'members',
+    'rest_framework',
     'cloudinary_storage',
 ]
 
