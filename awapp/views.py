@@ -67,3 +67,18 @@ def create_profile(request,user_id):
         
         return redirect('home')
     return render(request, 'update_profile.html',{'user':user,'form':form})
+
+def like(request,post_id ):
+    user = request.user
+    post=Post.objects.get(id=post_id)
+    if request.method == 'POST':
+        form=ReviewForm(request.POST )
+        if form.is_valid():
+            form=form.save(commit=False)
+            form.post=post
+            form.save()
+            return redirect('home')
+    else:
+        form=ReviewForm()
+
+    return render(request, 'review.html', {'form': form,'post': post,'user': user})

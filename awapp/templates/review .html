@@ -7,10 +7,11 @@
 {% block content%}
 <p>Hey {{user}}! Review {{post}} ?</p>
 
-<form method="POST" action="{% url 'delete_post' post.id%}">
+<form method="POST" action="{% url 'review' post.id%}">
 
     {%csrf_token%}
     <a href="{% url 'home'%}">cancel</a>
+    {{form.as_p}}
     <input type="submit" name="confirm">
 </form>
 {%endblock%}

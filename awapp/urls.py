@@ -12,5 +12,6 @@ urlpatterns =[
     path('post',views.create_post,name='post'),
     path('update_post/<str:pk>', views.update_post, name='update_post'),
     path('delete_post/<str:pk>', views.delete_post, name='delete_post'),
+    path('review/<post_id>', views.review, name="review"),
 
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
