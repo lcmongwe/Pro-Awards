@@ -3,16 +3,40 @@
     {% block styles %} 
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
     {% endblock %}
-    
+  
 {% block content%}
-{%if posterr.image%}
+    
+<div class="row">
+    <div class="col-md-4">
+        {%if posterr.image%}
 <img src="{{posterr.image.url}}" alt="" height="300px" width="300px" style="border-radius:250rem ;">
 {%endif%}
-<p>name: {{posterr.name}}<br>
-phone: {{posterr.phone}}</br>
-email: {{posterr.email}}</br>
-joined: {{posterr.date_created}}</br>
-bio: {{posterr.bio}}</p>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+  <div class="card-header">
+    CONTACTS
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">name: {{posterr.name}}</li>
+    <li class="list-group-item">phone: {{posterr.phone}}</li>
+    <li class="list-group-item">email: {{posterr.email}}</li>
+  </ul>
+</div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+  <h5 class="card-header">BIO</h5>
+  <div class="card-body">
+    <h5 class="card-title">{{posterr.bio}}</h5><br>
+    joined: {{posterr.date_created}}
+  </div>
+</div>
+    </div>
+
+</div>
 
 <br><br>
 <hr>
@@ -23,13 +47,14 @@ bio: {{posterr.bio}}</p>
 <hr>
 <br><br>
 {%for post in posts%}
+<div class="post">
 {{post.name}} <br>
 <img src="{{post.image.url}}" alt="" width="400px" height="400px"> <br>
 {{post.img_name}} <br>
 {{post.img_url}} <br>
 {{post.img_description}} <br>
 {{post.date_posted}} <br>
-
+</div>
 
 {%endfor%}
 
