@@ -1,0 +1,10 @@
+.register {
+  width: 600px;
+  height: 600px;
+  background-color: red;
+  padding: 20px;
+}
+
+.formr {
+  color: blue;
+}
