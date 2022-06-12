@@ -68,7 +68,7 @@ def create_profile(request,user_id):
         return redirect('home')
     return render(request, 'update_profile.html',{'user':user,'form':form})
 
-def like(request,post_id ):
+def review(request,post_id ):
     user = request.user
     post=Post.objects.get(id=post_id)
     if request.method == 'POST':
@@ -81,4 +81,4 @@ def like(request,post_id ):
     else:
         form=ReviewForm()
 
-    return render(request, 'review.html', {'form': form,'post': post,'user': user})
+    return render(request, 'review.html',{'user':user,'form':form})

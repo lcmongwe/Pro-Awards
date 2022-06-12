@@ -22,7 +22,7 @@
       <div class="card-body">
         <h5 class="card-title">PROJECT : {{post.img_name}}</h5>
         <p class="card-text">Owner: <br> {{post.poster.name}}</p>
-        <a href="{%url 'review' post.id %}" class="btn btn-primary">Rate </a>
+        <a href="{% url 'review' post.id %}" class="btn btn-primary">Rate </a>
       </div>
     </div>
   </div>

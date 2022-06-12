@@ -62,9 +62,3 @@ class ReviewForm(ModelForm):
             'content':'content',  
         }
 
-        widgets={
-           'design': forms.IntegerField(attrs={'class': 'form-control','placeholder':'  Rate design '}),
-           'usability': forms.IntegerField(attrs={'class': 'form-control','placeholder':'  Rate usability'}),          
-           'content':forms.IntegerField(attrs={'class': 'form-control','placeholder':'Rate content'}),
-
-        }

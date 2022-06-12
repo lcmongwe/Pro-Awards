@@ -50,4 +50,4 @@ class Review(models.Model):
         self.delete()
 
     def __str__(self):
-        return self.review
+        return self.post.img_name
