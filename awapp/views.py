@@ -92,7 +92,7 @@ def review(request,post_id ):
     
             
 
-            # return redirect('home')
+            return redirect('home')
     else:
         form=ReviewForm()
 

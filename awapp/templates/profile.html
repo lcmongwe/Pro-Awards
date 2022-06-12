@@ -54,8 +54,10 @@
 {{post.img_url}} <br>
 {{post.img_description}} <br>
 {{post.date_posted}} <br>
-</div>
+<btn btn-danger><a href="{% url 'delete_post' post.id%}">delete</a> </btn>
 
+</div>
+<br><br>
 {%endfor%}
 
 {%endblock%}
