@@ -18,3 +18,20 @@ This is a simple Django program that allows a user to singup,login and log out o
 
 - A user can rate  a proect.
 - A user can  click on  a live link and view the project. 
+
+### :pushpin:PROJECT SETUP INSTRUCTIONS
+
+- Open terminal {Ctrl +Alt + T}
+- git clone https://github.com/lcmongwe/pro-awards.git
+- cd myinsta
+- code . or atom . depending on your text editor
+- python3 manage.py runserver
+
+### :computer: TECHNOLOGIES USED
+
+- PYTHON
+- HTML,CSS and Bootstrap
+- Django Framework
+- Postrgressql
+- MARKDOWN
+- Heroku
