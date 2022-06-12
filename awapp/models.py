@@ -38,7 +38,7 @@ class Post(models.Model):
 
 class Review(models.Model):
     design=models.IntegerField(default=0,blank=True)
-    usability=models.TextField(default=0,blank=True)
+    usability=models.IntegerField(default=0,blank=True)
     content= models.IntegerField(default=0,null=True)
     post = models.ForeignKey(Post,on_delete=models.CASCADE,related_name='post',null=True,blank=True)
     

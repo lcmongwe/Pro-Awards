@@ -48,3 +48,23 @@ class ProfileForm(ModelForm):
            'bio':forms.Textarea(attrs={'class': 'form-control','placeholder':'bio'}),
 
         }
+
+
+class ReviewForm(ModelForm):
+    class Meta:
+        model= Review
+        # fields= "__all__"
+        fields=('design', 'usability', 'content' )
+
+        labels={
+            'design':'design',
+            'usability':'usability',
+            'content':'content',  
+        }
+
+        widgets={
+           'design': forms.IntegerField(attrs={'class': 'form-control','placeholder':'  Rate design '}),
+           'usability': forms.IntegerField(attrs={'class': 'form-control','placeholder':'  Rate usability'}),          
+           'content':forms.IntegerField(attrs={'class': 'form-control','placeholder':'Rate content'}),
+
+        }

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{%load static%}
+    {% block styles %} 
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    {% endblock %}
+    
+{% block content%}
+<p>Hey {{user}}! Review {{post}} ?</p>
+
+<form method="POST" action="{% url 'delete_post' post.id%}">
+
+    {%csrf_token%}
+    <a href="{% url 'home'%}">cancel</a>
+    <input type="submit" name="confirm">
+</form>
+{%endblock%}
