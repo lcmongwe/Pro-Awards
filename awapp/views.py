@@ -82,3 +82,15 @@ def review(request,post_id ):
         form=ReviewForm()
 
     return render(request, 'review.html',{'user':user,'form':form})
+
+
+def search(request):
+    if request.method == 'POST':
+        searched=request.POST.get('searched')
+        posts=Post.objects.filter(name__contains=searched)
+        return render(request, 'searched.html',{'searched':searched,'posts':posts})
+       
+
+    else:
+        return render(request, 'searched.html',{})
+
