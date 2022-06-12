@@ -87,7 +87,7 @@ def review(request,post_id ):
 def search(request):
     if request.method == 'POST':
         searched=request.POST.get('searched')
-        posts=Post.objects.filter(name__contains=searched)
+        posts=Post.objects.filter(img_name__contains=searched)
         return render(request, 'searched.html',{'searched':searched,'posts':posts})
        
 

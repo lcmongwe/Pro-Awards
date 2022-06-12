@@ -48,12 +48,12 @@
     </ul>
 
   
-    <form class="d-flex" method="POST" action="" float>
+    <form class="d-flex" method="POST" action="{% url 'search'%}" >
       {%csrf_token%}
         <input
         class="form-control mr-sm-2"
         type="search"
-        placeholder="Search people"
+        placeholder="Search Posts"
         aria-label="Search" name="searched"
         
       />
