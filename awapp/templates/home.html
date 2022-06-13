@@ -5,13 +5,14 @@
     {% endblock %}
     
 {% block content%}
+<div class="home">
 
 <center>
-<p>you are logged in as {{user.username}}</p>
+<p>Hello {{user.username}}!</p>
 <hr>
 {%for post in posts%}
 <div class="row">
-<div class="col-md-4">
+<div class="col-md-4 column1">
 <img src="{{post.image.url}}" alt="" width="400px" height="400px">
 </div>
 <div class="col-md-1"></div>
@@ -21,7 +22,8 @@
     <div class="card card1">
       <div class="card-body">
         <h5 class="card-title">PROJECT : {{post.img_name}}</h5>
-        <p class="card-text">Owner: <br> {{post.poster.name}}</p>
+        <img src="{{post.poster.image.url}}" alt="" width="70px" height="70px">
+        <p class="card-text">{{post.poster.name}}</p>
         <a href="{% url 'review' post.id %}" class="btn btn-primary">Rate </a>
       </div>
     </div>
@@ -38,7 +40,7 @@
   </div>
 </div>
 <br>
-<div class="row">
+<!-- <div class="row">
     <div class="col-md-8">
     <div class="card card3"style="border:2px solid red;">
   <div class="card-body">
@@ -51,7 +53,7 @@
   </div>
   </div>
 </div>
-</div>
+</div> -->
 </div>
 
 </div>
@@ -66,5 +68,5 @@ Description: {{post.img_description}} <br></p>
 <br><br>
 {%endfor%}
 </center>
-
+</div>
 {%endblock%}
