@@ -12,6 +12,13 @@ class Profile(models.Model):
     bio= models.CharField(max_length=500, blank=True, null=True)
     date_created = models.DateTimeField(auto_now_add=True,blank=True)
 
+
+    def save_profile(self):
+        self.save()
+
+    def delete_profile(self):
+        self.delete()
+
     def __str__(self):
         return self.name
 
