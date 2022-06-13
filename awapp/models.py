@@ -44,9 +44,22 @@ class Post(models.Model):
 
 
 class Review(models.Model):
-    design=models.IntegerField(default=0,blank=True,null=True)
-    usability=models.IntegerField(default=0,blank=True,null=True)
-    content= models.IntegerField(default=0,null=True)
+    RATING_CHOICES = (
+        (1,'1'),
+        (2,'2'),
+        (3,'3'),
+        (4,'4'),
+        (5,'5'),
+        (6,'6'),
+        (7,'7'),
+        (8,'8'),
+        (9,'9'),
+        (10,'10'),
+    )
+
+    design=models.IntegerField(choices=RATING_CHOICES,blank=True,null=True)
+    usability=models.IntegerField(choices=RATING_CHOICES,blank=True,null=True)
+    content= models.IntegerField(choices=RATING_CHOICES,blank=True,null=True)
     post = models.ForeignKey(Post,on_delete=models.CASCADE,related_name='post',null=True,blank=True)
     
 
