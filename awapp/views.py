@@ -92,11 +92,13 @@ def review(request,post_id ):
     
             
 
-            return redirect('home')
+            # return redirect('home')
+        return render(request, 'review.html',{'votes':votes,'post':post})
+
     else:
         form=ReviewForm()
 
-    return render(request, 'review.html',{'user':user,'form':form})
+    return render(request, 'review.html',{'user':user,'form':form,'post':post})
 
 
 def search(request):
