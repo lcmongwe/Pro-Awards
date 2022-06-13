@@ -27,3 +27,7 @@ hr{
     color:rgb(91, 89, 86);
     height:30px;
 }
+
+.circle{
+    border-radius:250rem;
+}

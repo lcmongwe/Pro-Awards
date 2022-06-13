@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {%load static%}
     {% block styles %} 
-    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    <link rel="stylesheet" href="{% static 'css/review.css' %}">
     {% endblock %}
     
 {% block content%}
@@ -9,12 +9,12 @@
 <p style="font-size:28px; font-weight:bold;color:brown">Hey {{user}}! Review {{post}} ?</p>
 </center>
 
-<div class="row">
-<div class="col-md-6">
+<div class="row row1">
+<div class="col-md-6 image">
 <img src="{{post.image.url}}" alt="" width="600px" height="600px">
 </div>
 <div class="col-md-1"></div>
-<div class="col-md-5">
+<div class="col-md-5 cardy">
     <div class="card card1">
       <div class="card-body">
         <h5 class="card-title">PROJECT : {{post.img_name}}</h5>
@@ -22,7 +22,7 @@
       </div>
     </div>
 <br><br>
-        <div class="card card1">
+        <div class="card card3">
       <div class="card-body">
         <h5 class="card-title">CURRENT RATING</h5>
         <p class="card-text"> {{votes}}/10</p>

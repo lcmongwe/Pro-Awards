@@ -1,0 +1,14 @@
+.cardy{
+    background-color: rgb(162, 66, 66);
+    border-radius: 5px;
+    padding:10px
+}
+
+.image img{
+    border-radius: 5px
+}
+
+.card3{
+    /* border-radius: 250rem; */
+    text-align: center;
+}
