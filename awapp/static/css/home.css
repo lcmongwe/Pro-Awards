@@ -1,13 +1,19 @@
 .card1{
     width: 200px;
-    height:309px;
+    height:300px;
     background-color: antiquewhite;
     border: 5px solid grey;
 
 }
 
+.card1 a{
+    margin-top: 50%;
+}
+
 .card2{
     border: 5px solid grey;
+    height:300px;
+    
 }
 
 .card3{
