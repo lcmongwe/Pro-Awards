@@ -11,7 +11,7 @@
 <p>Hello {{user.username}}!</p>
 <hr>
 {%for post in posts%}
-<div class="row">
+<div class="row row1">
 <div class="col-md-4 column1">
 <img src="{{post.image.url}}" alt="" width="400px" height="400px">
 </div>
@@ -23,7 +23,7 @@
       <div class="card-body">
         <h5 class="card-title">PROJECT : {{post.img_name}}</h5>
         <img src="{{post.poster.image.url}}" alt="" width="70px" height="70px">
-        <p class="card-text">{{post.poster.name}}</p>
+        <p class="card-text">By: {{post.poster.name}}</p>
         <a href="{% url 'review' post.id %}" class="btn btn-primary">Rate </a>
       </div>
     </div>

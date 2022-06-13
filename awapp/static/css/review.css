@@ -1,9 +1,18 @@
+
+body{
+    background-color: grey;
+}
 .cardy{
     background-color: rgb(162, 66, 66);
     border-radius: 5px;
-    padding:10px
+    padding:10px;
+    text-align:center;
+    font-weight: bolder;
 }
 
+.cardy img{
+    border-radius: 250rem;
+}
 .image img{
     border-radius: 5px
 }
@@ -11,4 +20,8 @@
 .card3{
     /* border-radius: 250rem; */
     text-align: center;
+}
+
+.row1{
+    font-weight: bolder;
 }
