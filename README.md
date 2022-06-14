@@ -39,6 +39,10 @@ This is a simple Django program that allows a user to singup,login and log out o
 ### :pushpin: KNOWN BUGS
 No known bugs so far
 
+### :pushpin: API ENDPOINT
+https://lclcmyawards.herokuapp.com/posts/
+
+
 ### :telephone_receiver: CONTACT INFORMATION
 
 Have any questions? reach me on:
