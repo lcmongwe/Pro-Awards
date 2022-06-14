@@ -4,11 +4,29 @@
 } */
 
 body{
-    background-color: grey;
+    background: linear-gradient(180deg, rgba(185, 105, 31, 0.66) 0%, rgba(6, 43, 172, 0.429) 100%);
+    /* background-color: grey; */
 }
 
 .column1 img{
     border-radius: 10px;
+    transition: 0.3s ease-in-out;
+    transform: scale(1);
+
+}
+
+
+#column1 :hover{
+     background-color: rgb(46, 58, 54); 
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+
+}
+
+.column1  img :hover{
+    transform: scale(1.5);
+    
 }
 
 .card1{
@@ -26,14 +44,30 @@ body{
 
 .card1 img{
     border-radius: 250rem;
+
 }
 
 .card1 :hover{
     background-color: rgb(46, 58, 54);
+    cursor: pointer;
+
 }
 
 .card2 :hover{
-    background-color: rgb(46, 58, 54);
+    /* background-color: rgb(46, 58, 54); */
+    /* transform: scale(1.5); */
+    /* transition: 0.3s ease-in-out; */
+    cursor: pointer;
+
+}
+
+#card2 :hover{
+     background-color: rgb(46, 58, 54); 
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    color: white;
+
 }
 
 .card2{

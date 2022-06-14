@@ -1,11 +1,14 @@
 
 body{
-    background-color: grey;
+    /* background-color: grey; */
+    background: linear-gradient(180deg, rgba(185, 105, 31, 0.66) 0%, rgba(6, 43, 172, 0.429) 100%);
+
+    
 }
 .cardy{
-    background-color: rgb(162, 66, 66);
+    background: linear-gradient(180deg, rgba(185, 105, 31, 0.66) 0%, rgba(6, 43, 172, 0.429) 100%);
     border-radius: 5px;
-    padding:10px;
+    padding:20px;
     text-align:center;
     font-weight: bolder;
 }

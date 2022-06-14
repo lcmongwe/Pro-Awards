@@ -5,7 +5,7 @@ from .models import Post,Review,Profile
 # Create your tests here.
 class PostTest(TestCase):
     '''
-    test class for Images model
+    test class for Post model
     '''
     def setUp(self):
        
