@@ -42,6 +42,8 @@ No known bugs so far
 ### :pushpin: API ENDPOINT
 https://lclcmyawards.herokuapp.com/posts/
 
+https://lclcmyawards.herokuapp.com/profiles/
+
 
 ### :telephone_receiver: CONTACT INFORMATION
 
