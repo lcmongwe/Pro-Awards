@@ -1,20 +1,9 @@
-.post{
-    display: flex;
-    flex-direction: row;
-}
-
 body{
     /* background-color: grey; */
     background: linear-gradient(180deg, rgba(185, 105, 31, 0.66) 0%, rgba(6, 43, 172, 0.429) 100%);
 }
 
-.card1{
-      /* background-color: grey; */
-    background: linear-gradient(180deg, rgba(185, 105, 31, 0.66) 0%, rgba(6, 43, 172, 0.429) 100%);
-}
-
-/* updateprofile.html */
-.profile{
+.post{
     height: auto;
     width: 600px;
     background: linear-gradient(180deg, rgba(185, 105, 31, 0.66) 0%, rgba(6, 43, 172, 0.429) 100%);

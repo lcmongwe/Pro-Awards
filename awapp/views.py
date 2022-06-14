@@ -183,7 +183,7 @@ def profile_detail(request,id):
        return Response(serializer.data)
 
     elif request.method == 'PUT':
-       serializer=Profileserializer(post, data=request.data)
+       serializer=serializer(post, data=request.data)
        if serializer.is_valid():
            serializer.save()
            return Response(serializer.dat)

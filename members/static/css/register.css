@@ -1,7 +1,15 @@
+
+body{
+    background: linear-gradient(180deg, rgba(185, 105, 31, 0.66) 0%, rgba(6, 43, 172, 0.429) 100%);
+    height:auto;
+}
 .register {
   width: 700px;
   height: 800px;
-  background-color: white;
+    background: linear-gradient(180deg, rgba(185, 105, 31, 0.66) 0%, rgba(6, 43, 172, 0.429) 100%);
+
+  /* color: white;  */
+  font-weight:bold; 
   padding: 20px;
   margin-left: 20%;
   border-radius: 10px;
