@@ -15,8 +15,12 @@ urlpatterns =[
     path('review/<post_id>', views.review, name="review"),
     path('search', views.search, name="search"),
 
+  # api-views
 
     path('posts/', views.post_list, name="posts"),
     path('posts/<int:id>', views.post_detail, name="posts"),
+    path('profiles/', views.profile_list, name="profiles"),
+    path('profiles/<int:id>', views.profile_detail, name="profiles"),
+
 
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
